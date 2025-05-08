@@ -10016,7 +10016,7 @@ body {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
-    height: 0;
+    height: 100%;
 }
 .ww-map iframe {
     left: 0;
