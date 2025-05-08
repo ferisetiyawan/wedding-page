@@ -10097,3 +10097,28 @@ body {
     opacity: 0;
     pointer-events: none;
 }
+
+.music-pulse {
+    animation: pulse-animation 1s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+}
+
+.music-container {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+}

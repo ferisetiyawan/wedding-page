@@ -67,6 +67,7 @@
       type="text/javascript"
     ></script>
     <script src="js/spinner.min.js"></script>
+    <script src="js/music.min.js"></script>
   </head>
 
   <body id="top">
@@ -486,10 +487,12 @@
       <audio id="player" src="mus.mp3"></audio>
       <div>
         <i
+          id="music-icon"
           class="fa fa-music fa-2x"
-          onclick="document.getElementById('player').play()"
+          onclick="togglePlayPause()"
         ></i>
       </div>
+      <div class="music-container" id="playerContainer"></div>
     </div>
 
     <div id="rsvp_btn">
