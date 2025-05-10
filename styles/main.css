@@ -10051,9 +10051,8 @@ body {
     color: #fff;
 }
 
-
 .bottom_right {
-    overflow: hidden;
+    overflow: visible;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -10061,7 +10060,7 @@ body {
 }
 
 .bottom_left {
-    overflow: hidden;
+    overflow: visible;
     position: fixed;
     text-align: right;
     bottom: 0;
@@ -10076,20 +10075,20 @@ body {
     transform: translateX(-50%);
     z-index: 9999;
     padding: 10px 24px;
-    background-color: rgba(255, 255, 255, 0.7); /* putih transparan */
+    background-color: rgba(255, 255, 255, 0.5);
     color: #000;
-    border: 1px solid #000; /* border lebih tipis */
+    border: 1px solid #000;
     border-radius: 30px;
     font-size: 15px;
     font-weight: 500;
-    text-decoration: none; /* hapus underline */
+    text-decoration: none;
     cursor: pointer;
-    backdrop-filter: blur(5px); /* opsional */
+    backdrop-filter: blur(5px);
     transition: opacity 1.5s ease, transform 0.5s ease;
 }
   
 .rsvp-center-btn:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.7);
     transform: translateX(-50%) scale(1.05);
 }
   
@@ -10136,4 +10135,10 @@ body {
     60% { transform: rotate(-10deg); }
     80% { transform: rotate(10deg); }
     100% { transform: rotate(0deg); }
+}
+
+.icon-outline {
+    color: rgba(255, 255, 255, 0.5);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
