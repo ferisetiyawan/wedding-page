@@ -508,9 +508,23 @@
     </div>
 
     <div id="rsvp_btn">
-      <button class="rsvp-center-btn" onclick="window.location.href='#rsvp'">
+      <button
+        class="rsvp-center-btn"
+        onclick="document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });"
+      >
           RSVP
       </button>
     </div>
+
+    <div class="bottom_right">
+      <div>
+        <i
+          id="gift-icon"
+          class="fa fa-gift fa-2x gift-shake"
+          onclick="document.getElementById('gift').scrollIntoView({ behavior: 'smooth' });"
+        ></i>
+      </div>
+    </div>
+
   </body>
 </html>
