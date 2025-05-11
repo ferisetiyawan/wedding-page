@@ -10203,3 +10203,97 @@ body {
     font-weight: bold;
     margin-top: 10px;
 }
+
+.rsvp-container {
+    max-width: 90%;
+    width: 400px;
+    margin: 0 auto;
+    padding: 2em;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.label-rsvp {
+    display: block;
+    margin-top: 1em;
+    font-weight: bold;
+  }
+
+.input-rsvp {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.3em;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+}
+
+.input-rsvp[readonly] {
+    background-color: #f8f8f8;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+
+.submit-rsvp {
+    margin-top: 1.5em;
+    padding: 0.7em 1.2em;
+    background-color: #000;
+    color: #ffffff;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#rsvpForm button[disabled] {
+    background-color: #ccc;
+    border: 1px solid #999;
+    color: #666;
+    cursor: not-allowed;
+    pointer-events: none;
+    transition: none;
+}
+
+.submit-rsvp:hover {
+    background-color: #333;
+    border-color: #bbb;
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    transform: translateY(-1px) scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+#formResponse {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+.rsvp-error {
+    background-color: #fff3cd;
+    border: 1px solid #aaa;
+    color: #856404;
+    padding: 12px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.calendar-links {
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+.calendar-links a {
+    display: inline-block;
+    margin: 0.3em;
+    padding: 0.5em 1em;
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.calendar-links a:hover {
+    background: #388e3c;
+}
