@@ -472,7 +472,7 @@
             
                 <div class="calendar-links" id="calendarLinks" style="display: none;">
                   <a id="googleCal" target="_blank">Add to Google Calendar</a>
-                  <a href="#" onclick="downloadICS(); return false;">Download ICS</a>
+                  <a href="#" onclick="downloadICS(); return false;">Download ICS (Calendar)</a>
                 </div>
               </div>
             </div>
@@ -548,5 +548,15 @@
     <script src="js/overlay.min.js"></script>
     <script src="js/rsvp.js"></script>
     <script src="js/navbar.min.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKWGP47D1W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HKWGP47D1W');
+    </script>
   </body>
 </html>

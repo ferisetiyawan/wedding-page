@@ -58,7 +58,7 @@ function setGoogleCalendarLink(name) {
     const location = encodeURIComponent("LePolonia Hotel & Convention, Jl. Jenderal Sudirman No.14-18, Madras Hulu, Kec. Medan Polonia, Kota Medan, Sumatera Utara 20152, Indonesia");
     const details = encodeURIComponent(
         `Dear ${name},\n\nThank you for your RSVP to our wedding.\n\nWe are delighted to invite you to celebrate our special day:\n\n📅 Date: 25 May 2025\n⏰ Time: 09.00 WIB\n📍 Location: LePolonia Hotel & Convention\n\nWe look forward to sharing this joyful moment with you.\n\nWarm regards,\nYanie & Feri`
-      );
+    );
     const dates = "20250525T040000Z/20250525T070000Z"; // UTC time
 
     const googleUrl = `${googleCalendarBase}&text=${title}&location=${location}&details=${details}&dates=${dates}`;
@@ -68,10 +68,10 @@ function setGoogleCalendarLink(name) {
 function downloadICS() {
     const name = document.getElementById("name").value.trim();
     const title = "Wedding of Yanie & Feri";
-    const location = "LePolonia Hotel & Convention, Medan";
+    const location = "LePolonia Hotel & Convention, Jl. Jenderal Sudirman No.14-18, Madras Hulu, Kec. Medan Polonia, Kota Medan, Sumatera Utara 20152, Indonesia";
     const startDate = "20250525T110000"; // local time
     const endDate = "20250525T140000";
-    const description = `Dear ${name}, thank you for your RSVP.`;
+    const description = `Dear ${name},\n\nThank you for your RSVP to our wedding.\n\nWe are delighted to invite you to celebrate our special day:\n\n📅 Date: 25 May 2025\n⏰ Time: 09.00 WIB\n📍 Location: LePolonia Hotel & Convention\n\nWe look forward to sharing this joyful moment with you.\n\nWarm regards,\nYanie & Feri`;
 
     const icsContent = `BEGIN:VCALENDAR
 VERSION:2.0
