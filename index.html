@@ -49,7 +49,11 @@
     <link href="styles/main.css" rel="stylesheet" />
     <link href="styles/spinner.css" rel="stylesheet" />
     <link
-      href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300"
+      href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300|Philosopher"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/billyna"
       rel="stylesheet"
     />
     <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
@@ -81,6 +85,31 @@
           </span>    
       </div>
     </section>
+
+    <div id="overlay">
+      <p class="ww-title"
+      style="font-family: 'Philosopher', Sans-serif; font-size: 1em">
+        The Wedding of
+      </p>
+      <p class="ww-title" style="font-family: 'Billyna', normal; font-size: 3em">Yanie & Feri</p>
+      <br /><br /><br /><br /><br />
+      <p
+        class="h2 mt-5 ww-title"
+        style="font-family: 'Gugi', cursive; font-size: 1em"
+      >
+        | YOU ARE INVITED |
+      </p><br />
+      <div class="invitation-label-box">
+        <p class="invitation-label-text">
+          Dear:<br />
+          <span id="dearName">Guest</span>
+        </p>
+      </div>
+      <button id="openBtn" onclick="openInvitation()">
+        <i
+          id="gift-icon"
+          class="fa fa-envelope"></i> Open Invitation</button>
+    </div>
     
     <header></header>
     <div id="fb-root"></div>
@@ -101,7 +130,7 @@
               justify-content-start
             "
           >
-            <div class="container ww-announcement-container">
+            <div class="container ww-announcement-container" id="text-announcement">
               <p class="ww-couple-name ww-title" style="font-size: 4em">
                 Yanie
               </p>
@@ -451,8 +480,11 @@
     <script src="js/parallax.min.js"></script>
     <script src="js/ekko-lightbox.min.js"></script>
     <script src="js/navbar.min.js"></script>
+    <script src="js/overlay.min.js"></script>
 
-    <div class="bottom_left">
+    <div 
+      class="bottom_left"
+      id="bottom-left">
       <div>
         <i
           id="music-icon"
@@ -472,11 +504,13 @@
       </button>
     </div>
 
-    <div class="bottom_right">
+    <div
+      class="bottom_right"
+      id="bottom-right">
       <div>
         <i
           id="gift-icon"
-          class="fa fa-gift fa-3x gift-shake icon-outline"
+          class="fa fa-gift fa-2x gift-shake icon-outline"
           onclick="document.getElementById('gift').scrollIntoView({ behavior: 'smooth' });"
         ></i>
       </div>

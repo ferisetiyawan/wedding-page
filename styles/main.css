@@ -70,6 +70,10 @@ body {
     background-color: #fff;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 
 [tabindex="-1"]:focus {
     outline: 0 !important;
@@ -10057,7 +10061,7 @@ body {
     bottom: 0;
     right: 0;
     margin: 0px 15px 15px 15px;
-    z-index: 9999;
+    z-index: 9998;
 }
 
 .bottom_left {
@@ -10067,7 +10071,7 @@ body {
     bottom: 0;
     left: 0;
     margin: 0px 15px 15px 15px;
-    z-index: 9999;
+    z-index: 9998;
 }
 
 .rsvp-center-btn {
@@ -10075,7 +10079,7 @@ body {
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 9999;
+    z-index: 9998;
     padding: 10px 24px;
     background-color: rgba(255, 255, 255, 0.5);
     color: #000;
@@ -10143,4 +10147,60 @@ body {
     color: rgba(255, 255, 255, 0.5);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+}
+
+#overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    z-index: 9999;
+    text-align: center;
+}
+
+#openBtn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#openBtn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+.invitation-label-box {
+    
+    border: 1px solid #ffffff;
+    border-radius: 12px;
+    padding: 20px 80px;
+    max-width: 300px;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+  
+.invitation-label-text {
+    text-align: center;
+    margin: 0;
+}
+
+.invitation-label-text span {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
 }

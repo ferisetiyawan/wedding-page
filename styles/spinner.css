@@ -5,7 +5,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: none repeat scroll 0 0 #ffffff;
+  /* background: none repeat scroll 0 0 #000000; */
+  background-color: rgba(0, 0, 0, 1);
   z-index: 99999;
   display: flex;
   justify-content: center;
