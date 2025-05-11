@@ -16,36 +16,30 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
     }
 
     try {
-        console.log("Form submitted, preventDefault applied.");
-        const response = await fetch("https://script.google.com/macros/s/AKfycbyN5xBvZU4Pp_QHyKG8OpBKJ68YwZbFdbsv1c9Oz94PbOKLXtKFJ5Y2Sc2SaaSd3fjE/exec", {
-            method: "POST",
-            body: JSON.stringify({ name, pax }),
-            headers: {
-                "Content-Type": "application/json",
-            },
+        const url = "https://script.google.com/macros/s/AKfycbyN5xBvZU4Pp_QHyKG8OpBKJ68YwZbFdbsv1c9Oz94PbOKLXtKFJ5Y2Sc2SaaSd3fjE/exec";
+        const mydata = JSON.stringify({ name, pax });
+        
+        $.post(url, mydata, function (response) {
+            if (response.status === "success") {
+                responseBox.classList.remove("rsvp-error");
+                responseBox.innerText =
+                    "Thank you! Your RSVP has been recorded.";
+                document.getElementById("calendarLinks").style.display = "block";
+
+                document.getElementById("name").setAttribute("readonly", true);
+                document.getElementById("pax").setAttribute("readonly", true);
+
+                const submitBtn = document.querySelector("#rsvpForm button[type='submit']");
+                submitBtn.disabled = true;
+                submitBtn.innerText = "RSVP Sent ✔";
+
+                setGoogleCalendarLink(name);
+            } else {
+                responseBox.classList.add("rsvp-error");
+                responseBox.innerText =
+                    "Failed to submit RSVP: " + response.message;
+            }
         });
-
-        const result = await response.json();
-
-        if (result.success) {
-            responseBox.classList.remove("rsvp-error");
-            responseBox.innerText =
-                "Thank you! Your RSVP has been recorded.";
-            document.getElementById("calendarLinks").style.display = "block";
-
-            document.getElementById("name").setAttribute("readonly", true);
-            document.getElementById("pax").setAttribute("readonly", true);
-
-            const submitBtn = document.querySelector("#rsvpForm button[type='submit']");
-            submitBtn.disabled = true;
-            submitBtn.innerText = "RSVP Sent ✔";
-
-            setGoogleCalendarLink(name);
-        } else {
-            responseBox.classList.add("rsvp-error");
-            responseBox.innerText =
-                "Failed to submit RSVP: " + result.message;
-        }
     } catch (err) {
         responseBox.classList.add("rsvp-error");
         responseBox.innerText =
