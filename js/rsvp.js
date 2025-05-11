@@ -6,18 +6,20 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
 
     const name = document.getElementById("name").value.trim();
     const pax = parseInt(document.getElementById("pax").value);
+    const side = document.querySelector('input[name="side"]:checked')?.value;
+
     const responseBox = document.getElementById("formResponse");
 
-    if (!name || pax < 1 || pax > 2) {
+    if (!name || pax < 1 || pax > 2 || !side) {
         responseBox.classList.add("rsvp-error");
         responseBox.innerText =
-            "Name and Pax (1-2) are required.";
+            "Name, Pax (1-2) and Friend of Bride or Groom are required.";
         return;
     }
 
     try {
         const url = "https://script.google.com/macros/s/AKfycbyN5xBvZU4Pp_QHyKG8OpBKJ68YwZbFdbsv1c9Oz94PbOKLXtKFJ5Y2Sc2SaaSd3fjE/exec";
-        const mydata = JSON.stringify({ name, pax });
+        const mydata = JSON.stringify({ name, pax, side });
         
         $.post(url, mydata, function (response) {
             if (response.status === "success") {
@@ -28,6 +30,10 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
 
                 document.getElementById("name").setAttribute("readonly", true);
                 document.getElementById("pax").setAttribute("readonly", true);
+                const radios = document.querySelectorAll('input[name="side"]');
+                radios.forEach(radio => {
+                    radio.disabled = true;
+                });
 
                 const submitBtn = document.querySelector("#rsvpForm button[type='submit']");
                 submitBtn.disabled = true;

@@ -450,10 +450,21 @@
                 <form id="rsvpForm">
                   <label for="name" class="label-rsvp">Your Name:</label>
                   <input type="text" id="name" name="name" class="input-rsvp" required/>
-            
+
                   <label for="pax" class="label-rsvp">Total Pax (Max 2):</label>
                   <input type="number" id="pax" name="pax" min="1" max="2" class="input-rsvp" required />
-            
+
+                  <label for="side" class="label-rsvp">You are a friend of:</label>
+                  <label style="margin-right: 1em;">
+                    <input type="radio" name="side" value="Yanie" required>
+                    👰 Bride
+                  </label>
+
+                  <label>
+                    <input type="radio" name="side" value="Feri">
+                    🤵 Groom
+                  </label>
+
                   <button type="submit" class="submit-rsvp">Submit RSVP</button>
                 </form>
             
