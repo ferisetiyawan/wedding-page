@@ -8,6 +8,14 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
     const pax = parseInt(document.getElementById("pax").value);
     const side = document.querySelector('input[name="side"]:checked')?.value;
 
+    const submitBtn = document.querySelector("#rsvpForm button[type='submit']");
+    const btnText = submitBtn.querySelector(".rsvp-btn-text");
+    const spinner = submitBtn.querySelector(".rsvp-spinner");
+
+    submitBtn.disabled = true;
+    btnText.innerText = "Sending RSVP";
+    spinner.style.display = "inline-block";
+
     const responseBox = document.getElementById("formResponse");
 
     if (!name || pax < 1 || pax > 2 || !side) {
@@ -35,21 +43,28 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
                     radio.disabled = true;
                 });
 
-                const submitBtn = document.querySelector("#rsvpForm button[type='submit']");
-                submitBtn.disabled = true;
-                submitBtn.innerText = "RSVP Sent ✔";
+                btnText.innerText = "RSVP Sent ✔";
+                spinner.style.display = "none";
 
                 setGoogleCalendarLink(name);
             } else {
                 responseBox.classList.add("rsvp-error");
                 responseBox.innerText =
                     "Failed to submit RSVP: " + response.message;
+                
+                submitBtn.disabled = false;
+                btnText.innerText = "Submit RSVP";
+                spinner.style.display = "none";
             }
         });
     } catch (err) {
         responseBox.classList.add("rsvp-error");
         responseBox.innerText =
           "Error connecting to RSVP system.";
+        
+        submitBtn.disabled = false;
+        btnText.innerText = "Submit RSVP";
+        spinner.style.display = "none";
     }
 });
 

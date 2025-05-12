@@ -10297,3 +10297,20 @@ body {
 .calendar-links a:hover {
     background: #388e3c;
 }
+
+.rsvp-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rsvpspin 0.7s linear infinite;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@keyframes rsvpspin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
