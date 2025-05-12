@@ -18,10 +18,10 @@ document.getElementById("rsvpForm").addEventListener("submit", async function (e
 
     const responseBox = document.getElementById("formResponse");
 
-    if (!name || pax < 1 || pax > 2 || !side) {
+    if (!name || pax < 1 || pax > 4 || !side) {
         responseBox.classList.add("rsvp-error");
         responseBox.innerText =
-            "Name, Pax (1-2) and Friend of Bride or Groom are required.";
+            "Name, Pax (1-4) and Friend of Bride or Groom are required.";
         return;
     }
 
